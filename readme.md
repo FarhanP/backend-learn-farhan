@@ -30,3 +30,14 @@
     - It can be done async or sync
        1. Sync fs operation returns that can be stored in a variable
        2. Async does not return anything and expects callback to be passed where we can do error handling as well
+
+> How Node works?
+
+    - NodeJS bindings (Node API) helps V8 engine (code) to communicate with Operating
+    system to perform various opeations such as API call or reading/writing files.
+    - Libuv - Async I/O (Made in C++) - helps perform asynchronous operations.
+    - If there are many requests, NodeJS bindings will put each task in the event queue.
+    - As in the JS, event loop will make sure it processes each task from the event queue by continuosly checking.
+    - Before processing, event loop will check first whether the task is blocking or non-blocking operation.
+        1. If the task is non-blocking operation, then it is executed immediately.
+        2. If its blocking, it passes the tasks to worker threads that is later on performed one by one and once all the tasks in worker thread is completed, then worker thread places a callback event in the event queue and then as usual the event loop process it to the application/console.
