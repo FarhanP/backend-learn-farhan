@@ -1,6 +1,6 @@
-**Notes for Node.js and Express**
+**Notes for Node.js and Express Framework**
 
-## Basic of Node.js 🚀
+## Basics of Node.js 🚀
 
 > Node - Getting started
 
