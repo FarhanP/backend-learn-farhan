@@ -41,4 +41,3 @@
     - Before processing, event loop will check first whether the task is blocking or non-blocking operation.
         1. If the task is non-blocking operation, then it is executed immediately.
         2. If its blocking, it passes the tasks to worker threads that is later on performed one by one and once all the tasks in worker thread is completed, then worker thread places a callback event in the event queue and then as usual the event loop process it to the application/console.
-       2. Async does not return anything and expects a callback to be passed where we can do error handling as well
