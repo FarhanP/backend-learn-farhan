@@ -1,0 +1,16 @@
+{
+  "name": "back-learn",
+  "version": "1.0.0",
+  "description": "A starter kit application for node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+    
+  },
+  "keywords": [
+    "starter-kit"
+  ],
+  "author": "Mohamed Farhan",
+  "license": "ISC"
+}
