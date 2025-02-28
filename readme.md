@@ -42,3 +42,12 @@
         1. If the task is non-blocking operation, then it is executed immediately.
         2. If its blocking, it passes the tasks to worker threads that is later on performed one by one and once all the tasks in worker thread is completed, then worker thread places a callback event in the event queue and then as usual the event loop process it to the application/console.
         3. Default Thread pool size = 4 and max threads = #-core CPU
+
+> HTTP Server
+
+    - The http.createServer() method is used to create an HTTP server.
+    - It listens for incoming requests and executes a callback function.
+    - The server.listen(8000, callback) method starts the server and makes it accessible on port 8000.
+    - The server listens for incoming requests and places them in an event queue.
+    - The event loop processes each request based on whether it's blocking or non-blocking.
+    - Logging is done asynchronously using the fs module to avoid blocking other requests.
