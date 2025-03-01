@@ -4,9 +4,9 @@
 
 > Node - Getting started
 
+    - Node.js is a runtime Env. for JS
     - Allows you to run JS outside a browser 🌏
     - Can talk to native machine because it combined built with C++
-    - Node.js is a runtime Env. for JS
     - Event-driven architecture.
     - Can be used to drive multi-thread
     - Window and Browser objects like alert, and DOM are removed from V8 Engine (for Node.js environment)
@@ -51,3 +51,26 @@
     - The server listens for incoming requests and places them in an event queue.
     - The event loop processes each request based on whether it's blocking or non-blocking.
     - Logging is done asynchronously using the fs module to avoid blocking other requests.
+
+> Handling URLs in Node
+
+    - A URL consists of different parts:
+        1. Domain → http://localhost:8000/
+        2. Pathname → /about (Identifies the specific page/resource)
+        3. Query Parameters → ?name=John&age=25 (Provides additional data in key=value format)
+        4. Protocol → http & secured version → https
+        5. Nested Pathname → about/john
+
+> HTTP Methods
+
+    There are five commonly seen types of HTTP methods in a request
+        1. GET → Retrieve data from the server (e.g., fetch user details).
+        2. POST → Send new data to the server (e.g., add a new user).
+        3. PUT → Replace existing data with new data (e.g., update an entire user profile).
+        4. PATCH → Modify a specific part of existing data (e.g., update only the user’s email).
+        5. DELETE → Remove data from the server (e.g., delete a user).
+
+> Express vs Node.js
+
+    - An unopinionated framework for Node.js
+    - Less and clean code with handlers such as routing, type of request and query  parameters
