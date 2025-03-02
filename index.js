@@ -5,6 +5,7 @@ const fs = require("fs");
 const http = require("http");
 const url = require("url");
 const express = require("express");
+const users = require("./MOCK_DATA.json");
 
 const app = express();
 
@@ -12,6 +13,61 @@ const app = express();
 app.get("/", (req, res) => {
   return res.end(`Hello from homepage!`);
 });
+
+// Middleware - plugin used to put body
+app.use(express.urlencoded({ extended: false }));
+
+/** REST API **/
+
+// Get all the users
+app.get("/api/users", (req, res) => {
+  return res.json(users);
+});
+
+// Get users based on their ID
+// app.get("/api/users/:id");
+
+// Create a new user
+app.post("/api/users", (req, res) => {
+  const body = req.body;
+  console.log(body);
+  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+    return res.json({ status: "pending" });
+  });
+});
+
+app
+  .route("/api/users/:id")
+  .get((req, res) => {
+    const id = Number(req.params.id);
+    const user = users.find((user) => user.id === id);
+    return res.json(user);
+  })
+  .patch((req, res) => {
+    const id = Number(req.params.id);
+    const updatedUsers = users.map((user) =>
+      user.id === id ? { ...user, ...req.body } : user
+    );
+
+    fs.writeFile(
+      "./MOCK_DATA.json",
+      JSON.stringify(updatedUsers),
+      (err, data) => {
+        return res.json({ status: "pending" });
+      }
+    );
+  })
+  .delete((req, res) => {
+    const id = Number(req.params.id);
+    const updatedUsers = users.filter((user) => user.id != id);
+    fs.writeFile(
+      "./MOCK_DATA.json",
+      JSON.stringify(updatedUsers),
+      (err, data) => {
+        return res.json({ status: "pending" });
+      }
+    );
+  });
 
 app.get("/about", (req, res) => {
   const queryParam = req.query.name;

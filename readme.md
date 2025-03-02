@@ -74,3 +74,20 @@
 
     - An unopinionated framework for Node.js
     - Less and clean code with handlers such as routing, type of request and query  parameters
+    - Provides easy database integration with mongoose, sequelize, etc.
+    - Rapid development, scalable web apps & APIs
+
+> Versioning in Node.js
+
+    - For example, there is a node version: 4.18.2
+        * first part -> 4 (Major release)
+        * second part -> 18 (bug fix - recommended/security fix )
+        * third part -> 2 (minor and optional update)
+    - ^4.18.2 -> here the caret sybmbol means do not upgrade to the major release
+    - ~4.18.1 -> here this symbol means do not upgrade to the bug fix release (second part)
+
+> REST API
+
+    - A represntational state that has its own standards
+    - The standard format is JSON that is used to send data between server and client and the reason being because client should not be dependent on server and vice versa, the client can be a cross-platform like browser, IoT device, Mobile App etc.
+    - HTTPS methods should be respected (use proper type of requests).
