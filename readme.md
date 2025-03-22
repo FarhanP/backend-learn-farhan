@@ -91,3 +91,22 @@
     - A represntational state that has its own standards
     - The standard format is JSON that is used to send data between server and client and the reason being because client should not be dependent on server and vice versa, the client can be a cross-platform like browser, IoT device, Mobile App etc.
     - HTTPS methods should be respected (use proper type of requests).
+
+> Middleware in Express
+
+    - A function that has access to both request and response along with the next middleware function if there is any in the API request/response cycle.
+    - They can stop and end the request before even reaching to the endpoint   
+    - The function next() helps out telling the middleware to move to the next one (if there's any and if not, to the endpoint)
+    - It can perform any task like authentication, logging, etc.
+    - It can also modify the request and response objects.
+    - It can also call the next middleware function in the stack.
+
+> HTTP Headers
+
+    - They are the meta data of aan API request.
+    - They are used to pass information between the client and server.
+    - Always add X to the custom headers.
+    - They are key-value pairs.
+    - They are case-insensitive.
+    
+    

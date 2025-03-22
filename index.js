@@ -17,12 +17,37 @@ app.get("/", (req, res) => {
 // Middleware - plugin used to put body
 app.use(express.urlencoded({ extended: false }));
 
+
+
+// Middlware - 1 (Custom)
+
+app.use((req, res, next) =>{
+  console.log("hello from middleware = V1");
+  fs.appendFile('./task.txt', `\n${new Date(Date.now()).toLocaleString(('en-IN'))}:
+   ${req.method}:${req.path}`, (err, data)=>{
+    // req.username = 'Farhan';
+    next();
+   });
+});
+
+// Middleware - 2 (Custom)
+// app.use((req, res, next) =>{
+//   console.log("hello from middleware = V2", req.username);
+//   next();
+// })
+
+
 /** REST API **/
 
 // Get all the users
 app.get("/api/users", (req, res) => {
+  console.log("I am in all users route", req.username);
+  console.log('Request headers', req.headers);
+  
+  res.setHeader('Xname','Mohamed Farhan');
   return res.json(users);
 });
+
 
 // Get users based on their ID
 // app.get("/api/users/:id");
@@ -87,7 +112,7 @@ function handler(req, res) {
     switch (myUrl.pathname) {
       case "/":
         res.end("Hello From the Home page!");
-        break;
+        break; 
       case "/about":
         const queryParamName = myUrl.query.name;
         res.end(`About Page, my name is ${queryParamName}`);

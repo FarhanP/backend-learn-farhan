@@ -10,3 +10,23 @@ POST /api/users - Create new user
 PATCH /api/users/1 - Edit with a particular user ID
 
 DELETE /api/users/1 - Delete a particular user with ID
+3/3/2025, 10:35:42 am:
+   GET : /api/users
+
+3/3/2025, 10:35:44 am:
+   GET : /api/users/506
+
+3/3/2025, 10:36:16 am:
+   GET:/api/users/506
+3/3/2025, 10:36:19 am:
+   GET:/api/users
+3/3/2025, 11:10:18 am:
+   GET:/api/users
+3/3/2025, 11:10:51 am:
+   GET:/api/users
+3/3/2025, 11:11:53 am:
+   GET:/api/users
+3/3/2025, 11:13:57 am:
+   GET:/api/users
+3/3/2025, 11:21:56 am:
+   GET:/api/users
